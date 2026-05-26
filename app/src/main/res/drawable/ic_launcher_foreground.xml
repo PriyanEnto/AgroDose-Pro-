@@ -1,0 +1,34 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    
+    <!-- Shadow effect for visual depth -->
+    <path
+        android:fillColor="#33000000"
+        android:pathData="M56,26 L48,26 L48,39 L47,40 C34,47 29,71 38,83 C46,95 66,95 74,83 C83,71 78,47 65,40 L64,39 L64,26 Z" />
+
+    <!-- Pure White Distillation Beaker Flask Body -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,24 L46,24 L46,38 C32,45 28,68 36,80 C44,92 64,92 72,80 C80,68 76,45 62,38 L62,24 Z" />
+
+    <!-- Active Chemical Fluid Wave (Soft Sprout Green Tint inside) -->
+    <path
+        android:fillColor="#C8E6C9"
+        android:pathData="M34,65 Q54,70 74,65 L72,78 C68,84 60,86 54,86 C48,86 40,84 36,78 Z" />
+
+    <!-- Botanical Bio-Science Leaf Sprout springing from Beaker throat -->
+    <path
+        android:fillColor="#A5D6A7"
+        android:pathData="M52,32 C52,15 68,15 68,15 C68,15 68,26 55,34 Z" />
+
+    <!-- Leaf stem line -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:pathData="M53,33 Q60,25 67,16" />
+        
+</vector>

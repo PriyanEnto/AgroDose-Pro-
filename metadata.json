@@ -1,0 +1,6 @@
+{
+  "name": "AgroDose Pro",
+  "description": "Calculate pesticide formulation dose, active ingredient delivery, and farmer practice values with up to 3 active ingredients.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
