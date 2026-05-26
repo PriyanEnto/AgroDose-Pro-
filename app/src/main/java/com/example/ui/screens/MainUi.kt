@@ -66,7 +66,7 @@ fun MainUi(viewModel: MainViewModel) {
                         Text(
                             text = "Pesticide & AI Formulation Calculator",
                             fontSize = 11.sp,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                            color = MaterialTheme.colorScheme.onSurface
                         )
                     }
                 },
@@ -265,9 +265,9 @@ fun HomeScreen(viewModel: MainViewModel) {
                         modifier = Modifier.size(18.dp)
                     )
                     Text(
-                        text = "Note: AI concentration is automatically rounded to the nearest full number. Always refer to product labels.",
+                        text = "Note: AI concentration is automatically rounded to the nearest 1% or 2% as industry standard. Always refer to product labels.",
                         style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        color = MaterialTheme.colorScheme.onSurface,
                         fontSize = 11.sp,
                         lineHeight = 16.sp
                     )
@@ -410,7 +410,7 @@ fun InputScreen(viewModel: MainViewModel, mode: CalculationMode) {
 
                     if (mode == CalculationMode.DOSE_TO_AI) {
                         Column {
-                            Text("Formulation Delivery Type", fontSize = 12.sp, fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                            Text("Formulation Delivery Type", fontSize = 12.sp, fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.onSurface)
                             Spacer(modifier = Modifier.height(4.dp))
                             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                                 Button(
@@ -441,7 +441,7 @@ fun InputScreen(viewModel: MainViewModel, mode: CalculationMode) {
 
                     if (mode == CalculationMode.DOSE_TO_AI || mode == CalculationMode.AI_TO_DOSE) {
                         Column {
-                            Text("Dose Metric Unit", fontSize = 12.sp, fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                            Text("Dose Metric Unit", fontSize = 12.sp, fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.onSurface)
                             Spacer(modifier = Modifier.height(4.dp))
                             FlowRow(
                                 modifier = Modifier.fillMaxWidth(),
@@ -510,7 +510,7 @@ fun InputScreen(viewModel: MainViewModel, mode: CalculationMode) {
                             )
                             Spacer(modifier = Modifier.width(6.dp))
                             Text(
-                                text = "AI % will automatically be rounded to the nearest full number for calculation (e.g., 5.66% → 6%, 28.3% → 30% based on rounding rule).",
+                                text = "AI % is rounded to the nearest 1% or 2% as industry standard (e.g., 5.66% → 6%, 28.3% → 28% based on rounding rule).",
                                 fontSize = 11.sp,
                                 color = MaterialTheme.colorScheme.primary,
                                 lineHeight = 14.sp
@@ -519,11 +519,11 @@ fun InputScreen(viewModel: MainViewModel, mode: CalculationMode) {
 
                         // Rounding selector
                         Column {
-                            Text("AI % Rounding Mode", fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant, fontWeight = FontWeight.SemiBold)
+                            Text("AI % Rounding Mode", fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurface, fontWeight = FontWeight.SemiBold)
                             Spacer(modifier = Modifier.height(4.dp))
                             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                                 mapOf(
-                                    "industry" to "Industry (Case 1)",
+                                    "industry" to "Industry (Nearest 1-2%)",
                                     "standard" to "Standard (Nearest 1%)",
                                     "multiple_10" to "Nearest 10%"
                                 ).forEach { (key, label) ->
@@ -722,7 +722,7 @@ fun InputScreen(viewModel: MainViewModel, mode: CalculationMode) {
                             )
 
                             Column {
-                                Text("Input Dose Density Unit Type", fontSize = 12.sp, fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                                Text("Input Dose Density Unit Type", fontSize = 12.sp, fontWeight = FontWeight.SemiBold, color = MaterialTheme.colorScheme.onSurface)
                                 Spacer(modifier = Modifier.height(4.dp))
                                 Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                                     Button(
@@ -864,7 +864,7 @@ fun ResultScreen(
                     Text(
                         text = "Calculated on: " + SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault()).format(Date()),
                         fontSize = 11.sp,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                        color = MaterialTheme.colorScheme.onSurface
                     )
                 }
 
@@ -1025,7 +1025,7 @@ fun ResultScreen(
                         Text(
                             text = "In a multi-AI commercial premix, separate formulation dose values are required to meet each individual target AI concentration. In real practice, the chemical application formulation dose MUST be governed strictly by the approved registered product label guidelines, or configured to satisfy the primary/target active ingredient constraint safely.",
                             fontSize = 12.sp,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            color = MaterialTheme.colorScheme.onSurface,
                             lineHeight = 16.sp
                         )
                     }
@@ -1216,7 +1216,7 @@ fun ResultScreen(
                     Text(
                         text = "This calculator is for educational and field calculation support only. Always inspect registered label recommendations and verify local regulatory safety guidelines before final compound pesticide application.",
                         fontSize = 10.sp,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        color = MaterialTheme.colorScheme.onSurface,
                         lineHeight = 14.sp
                     )
                 }
@@ -1268,7 +1268,7 @@ fun ResultScreen(
 fun FormulaItem(title: String, formula: String) {
     Column {
         Text(text = title, fontWeight = FontWeight.SemiBold, fontSize = 12.sp, color = MaterialTheme.colorScheme.primary)
-        Text(text = formula, fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant, fontFamily = FontFamily.Monospace)
+        Text(text = formula, fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurface, fontFamily = FontFamily.Monospace)
     }
 }
 
@@ -1332,7 +1332,7 @@ fun HistoryScreen(viewModel: MainViewModel) {
                     )
                     Text(
                         text = "Perform pesticide formulation runs on the input screens and save them to view previous computations offline.",
-                        color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.8f),
+                        color = MaterialTheme.colorScheme.onSurface,
                         fontSize = 12.sp,
                         textAlign = TextAlign.Center,
                         lineHeight = 16.sp
@@ -1397,14 +1397,14 @@ fun HistoryScreen(viewModel: MainViewModel) {
                                 Text(
                                     text = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault()).format(Date(item.timestamp)),
                                     fontSize = 11.sp,
-                                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f)
+                                    color = MaterialTheme.colorScheme.onSurface
                                 )
                             }
                             IconButton(onClick = { viewModel.deleteHistoryRecord(item.id) }) {
                                 Icon(
                                     imageVector = Icons.Default.Delete,
                                     contentDescription = "Delete item",
-                                    tint = MaterialTheme.colorScheme.error.copy(alpha = 0.7f)
+                                    tint = MaterialTheme.colorScheme.error
                                 )
                             }
                         }

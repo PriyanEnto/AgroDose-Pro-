@@ -30,7 +30,7 @@ object CalculatorUtils {
      * Rounds active ingredient percentage based on selected mode:
      * - "standard": Standard mathematical rounding (e.g. 5.66 -> 6, 28.3 -> 28)
      * - "multiple_10": Rounds to the nearest multiple of 10 (e.g. 28.3 -> 30, 5.66 -> 10)
-     * - "industry": Standard integer for <10%, nearest 10 for >=10% (e.g. 5.66 -> 6, 28.3 -> 30)
+     * - "industry": Organic industry standard rounding: nearest 1% for <10%, nearest 2% for >=10% (e.g. 5.66 -> 6, 28.3 -> 28, 12.0 -> 12)
      */
     fun roundAiPct(value: Double, mode: String): Int {
         if (value <= 0.0) return 0
@@ -42,7 +42,7 @@ object CalculatorUtils {
             }
             "industry" -> {
                 if (value >= 10.0) {
-                    val rounded = (round(value / 10.0) * 10).toInt()
+                    val rounded = (round(value / 2.0) * 2).toInt()
                     rounded.coerceIn(10, 100)
                 } else {
                     round(value).toInt().coerceIn(1, 9)

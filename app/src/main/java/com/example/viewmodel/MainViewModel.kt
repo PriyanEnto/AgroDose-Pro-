@@ -222,7 +222,7 @@ class MainViewModel(private val repository: CalculationRepository) : ViewModel()
                     results = results,
                     formDoseHaUnit = if (isLiquid) "ml/ha" else "g/ha",
                     formDoseAcreUnit = if (isLiquid) "ml/acre" else "g/acre",
-                    roundedAiUsedNote = "AI % has been rounded to the nearest full number for simplified calculation."
+                    roundedAiUsedNote = "AI % has been rounded to the nearest 1-2% as industry standard."
                 )
             }
 
@@ -267,7 +267,7 @@ class MainViewModel(private val repository: CalculationRepository) : ViewModel()
                     formDoseHaUnit = if (doseUnit.startsWith("ml")) "ml/ha" else "g/ha",
                     formDoseAcreUnit = if (doseUnit.startsWith("ml")) "ml/acre" else "g/acre",
                     dosesMatching = matching,
-                    roundedAiUsedNote = "AI % has been rounded to the nearest full number for simplified calculation."
+                    roundedAiUsedNote = "AI % has been rounded to the nearest 1-2% as industry standard."
                 )
             }
 
@@ -304,7 +304,7 @@ class MainViewModel(private val repository: CalculationRepository) : ViewModel()
                     formDoseHaUnit = if (isLiquid) "ml/ha" else "g/ha",
                     formDoseAcreUnit = if (isLiquid) "ml/acre" else "g/acre",
                     formDosePerTankUnit = if (isLiquid) "ml/tank" else "g/tank",
-                    roundedAiUsedNote = "AI % has been rounded to the nearest full number for simplified calculation."
+                    roundedAiUsedNote = "AI % has been rounded to the nearest 1-2% as industry standard."
                 )
             }
 
